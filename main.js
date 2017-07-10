@@ -27,27 +27,41 @@ function question2 () {
       prices.push(data[i].title);                         // GRAB THE TITLE OF ITEM
     }
   }
-  console.log(prices);                                    // CONSOLE LOG ALL OF THE  NAMES OF ITEMS BETWEEN $14 AND $18 
+  console.log(prices);                                    // CONSOLE LOG ALL OF THE  NAMES OF ITEMS BETWEEN $14 AND $18
 }
 
 
 
 // 3: Which item has a "GBP" currency code? Display it's name and price.
 function question3 () {
-  // Answer:
+
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].currency_code === "GBP") {                    // if in data currency_code is gbp
+
+      console.log(data[i].title + " costs " + data[i].price); // console.log title " costs " price
+    }
+  }
 }
 
 
 // 4: Display a list of all items who are made of wood.
 function question4 () {
-  // Answer:
+  let wooden = [];
+  for (var i = 0; i < data.length; i++) {                 // itterates through data
+    for (var j = 0; j < data[i].materials.length; j++) {  // itterates through data selecting materials
+      if (data[i].materials[j] === "wood" ) {             // if materials position [j] within data is "wood"
+        wooden.push(data[i].title);                       // push into array
+      }
+    }
+  }
+  console.log(wooden);
 }
 
 
 // 5: Which items are made of eight or more materials?
 //    Display the name, number of items and the items it is made of.
 function question5 () {
-  // Answer:
+  
 }
 
 
