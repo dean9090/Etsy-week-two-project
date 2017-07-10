@@ -63,16 +63,23 @@ function question4 () {
 function question5 () {
   let items = [];
   for (var i = 0; i < data.length; i++) {
-    for (var j = 8; j <= data[i].materials.length; i++) {
-      items.push(data[i].title , data[i].materials);
-    }
+      if (data[i].materials.length >= 8) {
+        items.push(data[i].title, data[i].materials)
+      }
   }
   console.log(items);
+
 }
 
 
 // 6: How many items were made by their sellers?
 // Answer:
 function question6 () {
-  // Answer:
+  let selfMade = [];
+  for (var i = 0; i < data.length; i++) {
+    if (data[i].who_made === "i_did") {
+      selfMade.push(i);
+    }
+  }
+  console.log(selfMade.length + " items were made by their sellers.");
 }
